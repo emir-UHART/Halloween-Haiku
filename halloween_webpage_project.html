@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme in Yellow - Evan Mir Halloween Project</title>
+    <!-- Tailwind CSS for UI Controls -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- STEP 4: Google Fonts (Cinzel & Playfair Display - 400 and 600 Weights) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- STEP 4: CSS Declarations --- */
+        h1, h2, h3, .font-heading {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        body, p, .font-body {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        /* Container Background Color Rule */
+        .container-box {
+            background-color: #120e08;
+        }
+
+        /* Responsive Background Image & Image Scaling Rules */
+        .responsive-bg {
+            background-image: linear-gradient(to bottom, rgba(10, 8, 4, 0.45), rgba(10, 8, 4, 0.75)), url('https://i.ibb.co/3ykXW0h/yellow-hallow-bg.jpg');
+            background-image: linear-gradient(to bottom, rgba(10, 8, 4, 0.45), rgba(10, 8, 4, 0.75)), url('https://placehold.co/1920x1080/120e08/fbbf24?text=Yellow+Sunset+Entity+Background');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #120e08;
+        }
+
+        /* Responsive Image Rule as required in STEP 4 */
+        .responsive-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0804;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fbbf24;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-100 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Viewport Switcher Bar -->
+    <header class="bg-stone-950/95 border-b border-amber-500/30 sticky top-0 z-50 py-3 px-4 shadow-2xl backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-crown text-amber-400 text-xl"></i>
+                <h1 class="text-base md:text-lg font-bold text-amber-400 tracking-wider">
+                    Evan_Mir_Halloween Project
+                </h1>
+            </div>
+            
+            <!-- View Selector Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 bg-stone-900 p-1.5 rounded-xl border border-amber-900/40 text-xs md:text-sm font-medium">
+                <button onclick="switchTab('live')" id="tab-live" class="tab-btn px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 bg-amber-500 text-stone-950 font-bold shadow-md">
+                    <i class="fa-solid fa-eye"></i> Live Webpage
+                </button>
+                <button onclick="switchTab('wireframe')" id="tab-wireframe" class="tab-btn px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-stone-400 hover:text-amber-300 hover:bg-stone-800">
+                    <i class="fa-solid fa-desktop"></i> Desktop Wireframe (1200px)
+                </button>
+                <button onclick="switchTab('prep')" id="tab-prep" class="tab-btn px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-stone-400 hover:text-amber-300 hover:bg-stone-800">
+                    <i class="fa-solid fa-file-code"></i> CSS Prep & Folder Setup
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN VIEW PANELS -->
+    <main class="flex-grow">
+        
+        <!-- ===================================================================
+             1. LIVE WEBPAGE PREVIEW
+             =================================================================== -->
+        <section id="view-live" class="view-panel block min-h-screen responsive-bg py-8 md:py-16 px-4">
+            <!-- Bounding Box Wrapper -->
+            <div class="w-full flex justify-center">
+                <!-- Main Container Div (Max-Width 1200px) -->
+                <div class="container-box w-full max-w-[1200px] rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl backdrop-blur-sm">
+                    
+                    <!-- 1. Header Image Banner inside Container -->
+                    <div class="relative w-full max-h-[420px] overflow-hidden border-b border-amber-500/30">
+                        <img src="https://i.ibb.co/3ykXW0h/yellow-hallow-bg.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/1200x450/120e08/fbbf24?text=Yellow+Sunset+Entity+Header+Banner';" 
+                             alt="Yellow Sunset Crowned Entity Landscape Banner" 
+                             class="responsive-img object-cover w-full h-full max-h-[420px]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#120e08] via-transparent to-transparent"></div>
+                    </div>
+
+                    <!-- Inner Container Content -->
+                    <div class="p-6 sm:p-12 md:p-16 max-w-4xl mx-auto space-y-8">
+                        
+                        <!-- 2. Poem Title & Author -->
+                        <div class="text-center space-y-3 border-b border-amber-500/20 pb-8">
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-400 tracking-wider">
+                                Theme in Yellow
+                            </h1>
+                            <p class="text-lg sm:text-xl text-amber-200/90 italic">
+                                by Carl Sandburg
+                            </p>
+                            <p class="text-xs font-mono text-stone-400 tracking-widest">
+                                1878 – 1967
+                            </p>
+                        </div>
+
+                        <!-- 3. Author Bio Link -->
+                        <div class="flex justify-center">
+                            <a href="https://www.poetryfoundation.org/poets/carl-sandburg" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-stone-900/90 hover:bg-amber-500 hover:text-stone-950 text-amber-400 border border-amber-500/40 hover:border-amber-400 transition-all text-sm font-semibold group shadow-lg">
+                                <i class="fa-solid fa-user-nib group-hover:rotate-12 transition-transform"></i>
+                                Read Carl Sandburg Biography &rarr;
+                            </a>
+                        </div>
+
+                        <!-- 4. Full Text of the Poem -->
+                        <div class="text-stone-200 text-lg sm:text-xl leading-relaxed text-center space-y-8 py-4 px-2">
+                            <div class="space-y-1">
+                                <p>I spot the hills</p>
+                                <p>With yellow balls in autumn.</p>
+                                <p>I light the prairie cornfields</p>
+                                <p>Orange and tawny gold clusters</p>
+                                <p>And I am called pumpkins.</p>
+                            </div>
+
+                            <div class="w-16 h-0.5 bg-amber-500/30 mx-auto"></div>
+
+                            <div class="space-y-1">
+                                <p>On the last of October</p>
+                                <p>When dusk is fallen</p>
+                                <p>Children join hands</p>
+                                <p>And circle round me</p>
+                                <p>Singing ghost songs</p>
+                                <p>And love to the harvest moon;</p>
+                            </div>
+
+                            <div class="w-16 h-0.5 bg-amber-500/30 mx-auto"></div>
+
+                            <div class="space-y-1">
+                                <p>I am a jack-o’-lantern</p>
+                                <p>With terrible teeth</p>
+                                <p>And the children know</p>
+                                <p>I am fooling.</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Image Sources / Citations -->
+                        <div class="border-t border-amber-500/20 pt-8 mt-12 text-center text-xs text-stone-400 space-y-1 font-mono">
+                            <p class="font-bold text-amber-400 uppercase tracking-widest">Image Sources & Credits</p>
+                            <p>Header Banner: <span class="text-amber-200">banner.jpg (AI Generated Yellow Sunset Landscape)</span></p>
+                            <p>Page Background: <span class="text-amber-200">background.jpg (AI Generated Sunset Landscape)</span></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             2. DESKTOP WIREFRAME PREVIEW (Max-Width 1200px ONLY)
+             =================================================================== -->
+        <section id="view-wireframe" class="view-panel hidden bg-zinc-950 py-10 px-4 min-h-screen">
+            <div class="max-w-6xl mx-auto">
+                <!-- Info Banner -->
+                <div class="mb-6 bg-zinc-900 border border-amber-500/40 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 bg-amber-500/20 text-amber-300 font-mono text-xs rounded mb-1 border border-amber-500/40">Step 3 Requirement</span>
+                        <h3 class="text-lg font-bold text-white">Desktop Black-and-White Wireframe (Max-Width: 1200px)</h3>
+                        <p class="text-zinc-400 text-xs">All elements strictly ordered top-to-bottom within the web page bounding box & container div.</p>
+                    </div>
+                    <div class="text-xs text-amber-400 font-mono bg-black/80 p-2.5 rounded border border-amber-500/40">
+                        Desktop Layout Only (Max 1200px Container)
+                    </div>
+                </div>
+
+                <!-- Bounding Box for the Web Page (1440px Simulated Canvas) -->
+                <div class="bg-zinc-900 border-2 border-dashed border-zinc-700 p-6 rounded-2xl overflow-x-auto">
+                    <div class="text-xs font-mono text-zinc-400 mb-2 flex justify-between items-center">
+                        <span>[ WEBPAGE BOUNDING BOX / ARTBOARD ]</span>
+                        <span>Width: 100% (Desktop 1440px Frame)</span>
+                    </div>
+
+                    <!-- Container Div (Max-Width 1200px) -->
+                    <div class="w-full max-w-[1200px] mx-auto bg-white text-black font-sans border-4 border-black p-8 rounded-none shadow-2xl space-y-8">
+                        
+                        <div class="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-3 py-1 inline-block">
+                            &lt;div class="container"&gt; (Max-Width: 1200px)
+                        </div>
+
+                        <!-- 1. Header Image Banner (Placeholder with X) -->
+                        <div class="relative w-full h-[320px] bg-zinc-100 border-2 border-black flex items-center justify-center overflow-hidden">
+                            <!-- Diagonal Lines for Wireframe Image Placeholder -->
+                            <svg class="absolute inset-0 w-full h-full stroke-zinc-400" stroke-width="1.5">
+                                <line x1="0" y1="0" x2="100%" y2="100%" />
+                                <line x1="100%" y1="0" x2="0" y2="100%" />
+                            </svg>
+                            <div class="relative bg-white border-2 border-black px-6 py-3 font-mono text-center shadow-md">
+                                <p class="font-bold text-sm">[ HEADER IMAGE ]</p>
+                                <p class="text-xs text-zinc-600">images/banner.jpg (1200px × 320px)</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Poem Title & Author Placement -->
+                        <div class="border-2 border-dashed border-zinc-400 p-6 text-center space-y-2">
+                            <div class="inline-block bg-zinc-200 border border-black text-[11px] font-mono px-2 py-0.5">Title & Author Block</div>
+                            <h2 class="text-3xl font-extrabold uppercase tracking-wide">THEME IN YELLOW</h2>
+                            <p class="text-lg font-serif italic text-zinc-700">by Carl Sandburg (1878 – 1967)</p>
+                        </div>
+
+                        <!-- 3. Bio Link Placement -->
+                        <div class="flex justify-center">
+                            <div class="border-2 border-black bg-zinc-100 px-6 py-2.5 text-center font-mono text-sm font-bold shadow-sm">
+                                [ LINK ] Read Author Biography &rarr;
+                            </div>
+                        </div>
+
+                        <!-- 4. Full Text Placement -->
+                        <div class="border-2 border-dashed border-zinc-400 p-8 text-center space-y-6 max-w-2xl mx-auto">
+                            <div class="inline-block bg-zinc-200 border border-black text-[11px] font-mono px-2 py-0.5">Full Text Stanzas</div>
+                            <div class="space-y-4 font-serif text-base leading-relaxed text-zinc-800">
+                                <p>I spot the hills<br>With yellow balls in autumn.<br>I light the prairie cornfields<br>Orange and tawny gold clusters<br>And I am called pumpkins.</p>
+                                <hr class="border-zinc-300 w-1/3 mx-auto">
+                                <p>On the last of October<br>When dusk is fallen<br>Children join hands<br>And circle round me<br>Singing ghost songs<br>And love to the harvest moon;</p>
+                                <hr class="border-zinc-300 w-1/3 mx-auto">
+                                <p>I am a jack-o’-lantern<br>With terrible teeth<br>And the children know<br>I am fooling.</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Image Sources Placement -->
+                        <div class="border-2 border-black bg-zinc-100 p-4 text-center font-mono text-xs space-y-1">
+                            <p class="font-bold uppercase">[ IMAGE SOURCES / FOOTNOTE ]</p>
+                            <p>Banner: images/banner.jpg | Background: images/background.jpg</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             3. CSS PREP & SUBMISSION FILES GUIDE
+             =================================================================== -->
+        <section id="view-prep" class="view-panel hidden bg-stone-950 py-10 px-4 min-h-screen text-stone-200">
+            <div class="max-w-4xl mx-auto space-y-8">
+                
+                <div class="border-b border-stone-800 pb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold font-heading text-amber-400">Submission Files & Prep Center</h2>
+                        <p class="text-stone-400 text-sm">Project Folder: <code class="text-amber-300 font-mono">Evan_Mir_Halloween</code></p>
+                    </div>
+                </div>
+
+                <!-- Step 4: CSS Setup -->
+                <div class="bg-stone-900 rounded-xl p-6 border border-amber-900/40 space-y-4 shadow-xl">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-code text-amber-400 text-xl"></i>
+                            <h3 class="text-lg font-semibold text-white">STEP 4: CSS Preparation File (css_prep.css)</h3>
+                        </div>
+                        <button onclick="copyToClipboard('css-code', 'btn-copy-css')" id="btn-copy-css" class="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs rounded transition-all">
+                            <i class="fa-solid fa-copy"></i> Copy CSS
+                        </button>
+                    </div>
+
+                    <pre id="css-code" class="bg-stone-950 p-4 rounded-lg text-xs font-mono text-amber-300 overflow-x-auto border border-stone-800 leading-relaxed">
+/* ===================================================================
+   STEP 4: CSS PREPARATION FILE (Evan_Mir_Halloween)
+   =================================================================== */
+
+/* --- GOOGLE FONTS LINK TAGS (Place in <head>) --- */
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+*/
+
+/* --- GOOGLE FONTS DECLARATIONS --- */
+h1, h2, h3, .poem-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+}
+
+body, p, .poem-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* --- CONTAINER BACKGROUND COLOR RULE --- */
+.container {
+    background-color: #120e08;
+}
+
+/* --- RESPONSIVE BACKGROUND IMAGE & RESPONSIVE IMAGE RULES --- */
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #120e08;
+}
+
+/* Responsive Image Scaling Rules */
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}</pre>
+                </div>
+
+                <!-- Step 5: Folder Structure Checklist -->
+                <div class="bg-stone-900 rounded-xl p-6 border border-amber-900/40 space-y-4 shadow-xl">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-folder-tree text-amber-400 text-xl"></i>
+                        <h3 class="text-lg font-semibold text-white">STEP 5: Project Folder Structure</h3>
+                    </div>
+
+                    <div class="bg-stone-950 p-5 rounded-lg border border-stone-800 font-mono text-xs text-stone-300 space-y-2">
+                        <div class="text-amber-400 font-bold text-sm">
+                            <i class="fa-solid fa-folder-open"></i> Evan_Mir_Halloween/
+                        </div>
+                        <div class="pl-6 space-y-2">
+                            <div class="flex items-center gap-2 text-stone-300">
+                                <i class="fa-solid fa-file-code text-amber-400"></i> index.html
+                            </div>
+                            <div class="flex items-center gap-2 text-stone-300">
+                                <i class="fa-solid fa-file-lines text-amber-400"></i> css_prep.css (or css_prep.txt)
+                            </div>
+                            <div class="flex items-center gap-2 text-stone-300">
+                                <i class="fa-solid fa-file-word text-blue-400"></i> poem_credits.docx (or poem_credits.txt)
+                            </div>
+                            <div class="flex items-center gap-2 text-stone-300">
+                                <i class="fa-solid fa-file-image text-purple-400"></i> Wireframe_Desktop.png
+                            </div>
+                            
+                            <!-- Subfolder -->
+                            <div class="pl-2 pt-2 border-l border-stone-800 space-y-2">
+                                <div class="flex items-center gap-2 text-amber-400 font-bold">
+                                    <i class="fa-solid fa-folder"></i> images/
+                                </div>
+                                <div class="pl-6 space-y-1 text-stone-400">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-image text-amber-300"></i> background.jpg (800px+ wide, 72 ppi)
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-image text-amber-300"></i> banner.jpg (800px+ wide, 72 ppi)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1 Text File Copy -->
+                <div class="bg-stone-900 rounded-xl p-6 border border-amber-900/40 space-y-4 shadow-xl">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-file-lines text-amber-400 text-xl"></i>
+                            <h3 class="text-lg font-semibold text-white">Poem & Credits Text Document</h3>
+                        </div>
+                        <button onclick="copyToClipboard('poem-text-doc', 'btn-copy-poem')" id="btn-copy-poem" class="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs rounded transition-all">
+                            <i class="fa-solid fa-copy"></i> Copy Text Document
+                        </button>
+                    </div>
+
+                    <pre id="poem-text-doc" class="bg-stone-950 p-4 rounded-lg text-xs font-mono text-stone-300 overflow-x-auto border border-stone-800 leading-relaxed">
+Poem Title: Theme in Yellow
+Author: Carl Sandburg
+Dates: 1878 – 1967
+
+POEM TEXT:
+I spot the hills 
+With yellow balls in autumn. 
+I light the prairie cornfields 
+Orange and tawny gold clusters 
+And I am called pumpkins. 
+
+On the last of October 
+When dusk is fallen 
+Children join hands 
+And circle round me 
+Singing ghost songs 
+And love to the harvest moon; 
+
+I am a jack-o’-lantern 
+With terrible teeth 
+And the children know 
+I am fooling.
+
+IMAGE CREDITS:
+1. Header Banner Image: images/banner.jpg (AI Generated Yellow Sunset Landscape, 800px+ wide, 72 ppi)
+2. Background Image: images/background.jpg (AI Generated Yellow Sunset Landscape, 800px+ wide, 72 ppi)</pre>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 border-t border-stone-900 py-4 text-center text-xs text-stone-500 font-mono">
+        <p>Evan_Mir_Halloween Project Module</p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function switchTab(tabName) {
+            // Hide all views
+            const views = document.querySelectorAll('.view-panel');
+            views.forEach(view => view.classList.add('hidden'));
+
+            // Reset tab styles
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-amber-500', 'text-stone-950', 'font-bold', 'shadow-md');
+                tab.classList.add('text-stone-400', 'hover:text-amber-300', 'hover:bg-stone-800');
+            });
+
+            // Show selected view
+            const activeView = document.getElementById('view-' + tabName);
+            if (activeView) {
+                activeView.classList.remove('hidden');
+            }
+
+            // Highlight active tab
+            const activeTab = document.getElementById('tab-' + tabName);
+            if (activeTab) {
+                activeTab.classList.remove('text-stone-400', 'hover:text-amber-300', 'hover:bg-stone-800');
+                activeTab.classList.add('bg-amber-500', 'text-stone-950', 'font-bold', 'shadow-md');
+            }
+        }
+
+        function copyToClipboard(elementId, buttonId) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const btn = document.getElementById(buttonId);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            btn.classList.remove('bg-amber-500');
+            btn.classList.add('bg-emerald-500', 'text-white');
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-emerald-500', 'text-white');
+                btn.classList.add('bg-amber-500');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
